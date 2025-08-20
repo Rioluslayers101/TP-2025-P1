@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Factorial.cs" />
     <Compile Remove="Objetos y Herencia.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Factorial.cs" />
     <None Include="Objetos y Herencia.cs" />
   </ItemGroup>
 
