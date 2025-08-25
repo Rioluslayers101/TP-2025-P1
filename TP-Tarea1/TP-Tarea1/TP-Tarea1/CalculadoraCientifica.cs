@@ -5,6 +5,13 @@
     {
     }
     //Metodos
+
+    public override double Sumar()
+    {
+        double suma= base.Sumar();
+        Console.WriteLine($"La suma es {suma*2}");
+        return suma;
+    }
     public int Factorial()
     {
         int factorial = 1;
@@ -18,8 +25,26 @@
             {
                 factorial=factorial*i;
             }
-            Console.WriteLine($"El factorial de {factorial} es: {resultado}");
+        return factorial;
         }
+
+    public double RaizCuadrada() 
+    {
+        return Math.Sqrt(Numero1);
+        
     }
+
+    public double Logaritmo()
+    {
+        return Math.Log(Numero1);
+    }
+
+// Metodo publico para acceder 
+    public void MenCal()
+    {
+        Console.WriteLine(MostrarMensaje());
+    }
+
+}
 
     
