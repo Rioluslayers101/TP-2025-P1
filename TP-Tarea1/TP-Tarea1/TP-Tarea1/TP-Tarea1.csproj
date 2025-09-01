@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Compile Remove="Arreglos\MainArreglos.cs" />
+    <Compile Remove="Banco Excepciones\MainBanco.cs" />
+    <Compile Remove="Dispositivos\DispositivosMain.cs" />
     <Compile Remove="Ejercicio Complementario\Progama principal auto.cs" />
     <Compile Remove="Ejercicio Suministros\MainSuministros.cs" />
     <Compile Remove="Excepciones\MainExcepciones.cs" />
@@ -20,6 +22,8 @@
 
   <ItemGroup>
     <None Include="Arreglos\MainArreglos.cs" />
+    <None Include="Banco Excepciones\MainBanco.cs" />
+    <None Include="Dispositivos\DispositivosMain.cs" />
   </ItemGroup>
 
   <ItemGroup>
