@@ -12,6 +12,7 @@
     <Compile Remove="Arreglos\MainArreglos.cs" />
     <Compile Remove="Ejercicio Complementario\Progama principal auto.cs" />
     <Compile Remove="Ejercicio Suministros\MainSuministros.cs" />
+    <Compile Remove="Excepciones\MainExcepciones.cs" />
     <Compile Remove="Factorial.cs" />
     <Compile Remove="MainCalculadora.cs" />
     <Compile Remove="Objetos y Herencia.cs" />
@@ -24,6 +25,7 @@
   <ItemGroup>
     <None Include="Ejercicio Complementario\Progama principal auto.cs" />
     <None Include="Ejercicio Suministros\MainSuministros.cs" />
+    <None Include="Excepciones\MainExcepciones.cs" />
     <None Include="Factorial.cs" />
     <None Include="MainCalculadora.cs" />
     <None Include="Objetos y Herencia.cs" />
