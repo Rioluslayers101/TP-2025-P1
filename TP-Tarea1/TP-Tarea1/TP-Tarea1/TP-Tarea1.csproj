@@ -16,6 +16,8 @@
     <Compile Remove="Ejercicio Suministros\MainSuministros.cs" />
     <Compile Remove="Excepciones\MainExcepciones.cs" />
     <Compile Remove="Factorial.cs" />
+    <Compile Remove="Lista\Lista.cs" />
+    <Compile Remove="Lista\ListaMain.cs" />
     <Compile Remove="MainCalculadora.cs" />
     <Compile Remove="Objetos y Herencia.cs" />
   </ItemGroup>
@@ -31,6 +33,8 @@
     <None Include="Ejercicio Suministros\MainSuministros.cs" />
     <None Include="Excepciones\MainExcepciones.cs" />
     <None Include="Factorial.cs" />
+    <None Include="Lista\Lista.cs" />
+    <None Include="Lista\ListaMain.cs" />
     <None Include="MainCalculadora.cs" />
     <None Include="Objetos y Herencia.cs" />
   </ItemGroup>
