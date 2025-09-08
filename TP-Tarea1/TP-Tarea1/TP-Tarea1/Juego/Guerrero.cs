@@ -12,7 +12,7 @@
         Vida = vida;
         Ataque = ataque;
     }
-    //Medotos
+    // Metodos
 
     public virtual void Atacar(Guerrero enemigo)
     {
@@ -21,7 +21,7 @@
         Console.WriteLine($"{Nombre} ataca a {enemigo.Nombre} y le quita {danio} puntos de vida.");
     }
 
-    public void RecibirDanio(int danio)
+    public virtual void RecibirDanio(int danio)
     {
         Vida = Math.Max(Vida - danio, 0);
         Console.WriteLine($"{Nombre} recibe {danio} puntos de daño. Vida restante: {Vida}");

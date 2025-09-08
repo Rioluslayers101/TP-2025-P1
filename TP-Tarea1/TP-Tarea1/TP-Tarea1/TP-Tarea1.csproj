@@ -18,6 +18,7 @@
     <Compile Remove="Factorial.cs" />
     <Compile Remove="Lista\Lista.cs" />
     <Compile Remove="Lista\ListaMain.cs" />
+    <Compile Remove="Lista\PersonaL.cs" />
     <Compile Remove="MainCalculadora.cs" />
     <Compile Remove="Objetos y Herencia.cs" />
   </ItemGroup>
@@ -37,6 +38,10 @@
     <None Include="Lista\ListaMain.cs" />
     <None Include="MainCalculadora.cs" />
     <None Include="Objetos y Herencia.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Lista\PersonaL.cs" />
   </ItemGroup>
 
 </Project>
