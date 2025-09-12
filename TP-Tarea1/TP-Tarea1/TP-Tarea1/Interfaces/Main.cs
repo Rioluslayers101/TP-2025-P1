@@ -4,7 +4,7 @@ IEjemplo elgo = new IEjemplo.Ejemplo();
 elgo.HacerAlgo();
 elgo.HacerAlgoMas();
 
-Ejemplo otroElgo = new IEjemplo.Ejemplo();
+Ejemplo otroElgo = new Ejemplo();
 otroElgo.HacerAlgo();
 otroElgo.HacerAlgoMas();
 //Interfaz
