@@ -12,13 +12,16 @@
     <Compile Remove="Arreglos\MainArreglos.cs" />
     <Compile Remove="Banco Excepciones\MainBanco.cs" />
     <Compile Remove="Dispositivos\DispositivosMain.cs" />
+    <Compile Remove="Dispositivos\Ventilador.cs" />
     <Compile Remove="Ejercicio Complementario\Progama principal auto.cs" />
+    <Compile Remove="Ejercicio Interfaces\Main.cs" />
     <Compile Remove="Ejercicio Suministros\MainSuministros.cs" />
     <Compile Remove="Excepciones\MainExcepciones.cs" />
     <Compile Remove="Factorial.cs" />
     <Compile Remove="Interfaces\Animal.cs" />
     <Compile Remove="Interfaces\AnimalInterface.cs" />
     <Compile Remove="Interfaces\Casteo.cs" />
+    <Compile Remove="Interfaces\IPago.cs" />
     <Compile Remove="Interfaces\Main.cs" />
     <Compile Remove="Juego\MainJuego.cs" />
     <Compile Remove="Lista\Lista.cs" />
@@ -32,16 +35,19 @@
     <None Include="Arreglos\MainArreglos.cs" />
     <None Include="Banco Excepciones\MainBanco.cs" />
     <None Include="Dispositivos\DispositivosMain.cs" />
+    <None Include="Dispositivos\Ventilador.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Ejercicio Complementario\Progama principal auto.cs" />
+    <None Include="Ejercicio Interfaces\Main.cs" />
     <None Include="Ejercicio Suministros\MainSuministros.cs" />
     <None Include="Excepciones\MainExcepciones.cs" />
     <None Include="Factorial.cs" />
     <None Include="Interfaces\Animal.cs" />
     <None Include="Interfaces\AnimalInterface.cs" />
     <None Include="Interfaces\Casteo.cs" />
+    <None Include="Interfaces\IPago.cs" />
     <None Include="Interfaces\Main.cs" />
     <None Include="Juego\MainJuego.cs" />
     <None Include="Lista\Lista.cs" />
