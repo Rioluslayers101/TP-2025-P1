@@ -60,4 +60,13 @@
     <Page Include="Lista\PersonaL.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Biblioteca de Libros">
+      <HintPath>..\..\..\Biblioteca de Libros\bin\Debug\net8.0\Biblioteca de Libros.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionesBiblioteca">
+      <HintPath>..\..\..\ExtensionesBiblioteca\bin\Debug\net8.0\ExtensionesBiblioteca.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

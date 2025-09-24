@@ -193,7 +193,7 @@ public class Libreria
         }
     }
     //Criterio de calificacion
-    public void CambiarCriterio(string criterio)
+    public void CambiarCriterio(string criterio)    
     {
         if(criterio=="Promedio")
         {
