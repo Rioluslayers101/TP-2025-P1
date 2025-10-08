@@ -21,7 +21,7 @@
         {
             libros.Add(libro);
         }
-
+    
         public void EliminarLibro(string titulo)
         {
             libros.RemoveAll(l => l.Titulo == titulo);

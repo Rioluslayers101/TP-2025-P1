@@ -18,6 +18,7 @@
     <Compile Remove="Ejercicio Suministros\MainSuministros.cs" />
     <Compile Remove="Excepciones\MainExcepciones.cs" />
     <Compile Remove="Factorial.cs" />
+    <Compile Remove="Implementacion libreria\UsoBiblioteca.cs" />
     <Compile Remove="Interfaces\Animal.cs" />
     <Compile Remove="Interfaces\AnimalInterface.cs" />
     <Compile Remove="Interfaces\Casteo.cs" />
@@ -44,6 +45,7 @@
     <None Include="Ejercicio Suministros\MainSuministros.cs" />
     <None Include="Excepciones\MainExcepciones.cs" />
     <None Include="Factorial.cs" />
+    <None Include="Implementacion libreria\UsoBiblioteca.cs" />
     <None Include="Interfaces\Animal.cs" />
     <None Include="Interfaces\AnimalInterface.cs" />
     <None Include="Interfaces\Casteo.cs" />
