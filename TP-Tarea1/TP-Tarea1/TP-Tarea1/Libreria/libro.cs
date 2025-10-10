@@ -1,4 +1,43 @@
-﻿public class Libro
+﻿//Instancias de la libreria
+
+Libreria libreria = new Libreria();
+try
+{
+    Console.WriteLine("Ingrese el numero de operaciones:");
+    int operaciones = int.Parse(Console.ReadLine() ?? "");
+    for (int i = 0; i < operaciones,i++)
+    {
+        //Sin aplicar expresiones regulares
+        string[] entrada = (Console.ReadLine() ?? "").Split(',');
+        string comando = entrada[0];
+        switch (comando)
+        {
+            case "Libro":
+                libreria.AgregarLibro(entrada[1], entrada[2], entrada[3]);
+                break;
+            case "Calificar":
+                if (entrada.Length == 4)
+                {
+                    libreria.CalificarLibro(entrada[1], int.Parse(entrada[3]), "");
+                }
+                else if (entrada.Length == 5)
+                {
+                    libreria.CalificarLibro(entrada[1], int.Parse(entrada[3]), string.Join("", entrada.Skip(4)));
+                }
+                break;
+            case "Mejor":
+                libreria.MostrarMejorLibro(entrada[1]);
+                break;
+            case "Criterio":
+                libreria.CambiarCriterio(entrada[1]);
+                break;
+            default:
+                throw new ArgumentException("Comando no reconocido");
+        }
+    }
+}
+
+public class Libro
 {
     //Atributos
     public string Titulo { get; set; }
@@ -19,7 +58,7 @@
     //Metodos
     public void Calificar(int nota)
     {
-        if(nota<1 || nota>5)
+        if (nota < 1 || nota > 5)
         {
             throw new ArgumentException("Calificación invalida (debe estar entre 1 y 5");
         }
@@ -27,24 +66,24 @@
     }
 
     //Sobrecargar
-    public void Calificar(int nota,string comentario)
+    public void Calificar(int nota, string comentario)
     {
-     Console.WriteLine($"Comentario recibido: {comentario}");
-     Calificar(nota);
+        Console.WriteLine($"Comentario recibido: {comentario}");
+        Calificar(nota);
     }
 
     public double ObtenerPromedio()
     {
-        if(Calificaciones.Count==0)
+        if (Calificaciones.Count == 0)
         {
             return 0;
         }
-        double suma=0;
-        foreach(int calificacion in Calificaciones)
+        double suma = 0;
+        foreach (int calificacion in Calificaciones)
         {
-            suma+=calificacion;
+            suma += calificacion;
         }
-        return suma/Calificaciones.Count;
+        return suma / Calificaciones.Count;
     }
     public int ObtenerCantidadVotos()
     {
@@ -53,16 +92,16 @@
 }
 
 //Subclases para las diferentes categorias de libros
-public class LibroFiccion:Libro
+public class LibroFiccion : Libro
 {
-    public LibroFiccion(string titulo, string autor, string genero):base(titulo,autor,genero)
+    public LibroFiccion(string titulo, string autor, string genero) : base(titulo, autor, genero)
     {
     }
 }
 
-public class LibroTecnico:Libro
+public class LibroTecnico : Libro
 {
-    public LibroTecnico(string titulo, string autor, string genero):base(titulo,autor,genero)
+    public LibroTecnico(string titulo, string autor, string genero) : base(titulo, autor, genero)
     {
     }
 }
@@ -72,52 +111,52 @@ public class LibroTecnico:Libro
 interface IRecomendable
 {
 
-    Libro ObtenerMejorLibro(List<Libro> libros);
+    Libro ObtenerMejorLibro(List<Libro> libros);    
 }
 //Estrategia basada en el promedio de calificaciones
 
 
 
-public class RecomendacionPorPromedio:IRecomendable
+public class RecomendacionPorPromedio : IRecomendable
 {
     public Libro ObtenerMejorLibro(List<Libro> libros)
     {
-        if(libros==null || libros.Count==0)
+        if (libros == null || libros.Count == 0)
         {
             throw new ArgumentException("La lista de libros no puede estar vacia");
         }
-        Libro mejorLibro=null;
-        double mejorPromedio= -1;
-        foreach(var libro in libros)
+        Libro mejorLibro = null;
+        double mejorPromedio = -1;
+        foreach (var libro in libros)
         {
-            double promedio=libro.ObtenerPromedio();
-            if(promedio>mejorPromedio)
+            double promedio = libro.ObtenerPromedio();
+            if (promedio > mejorPromedio)
             {
-                mejorPromedio=promedio;
-                mejorLibro=libro;
+                mejorPromedio = promedio;
+                mejorLibro = libro;
             }
         }
         return mejorLibro;
     }
 }
 //Estrategia basada en la cantidad de votos
-public class RecomendacionPorVotos:IRecomendable
+public class RecomendacionPorVotos : IRecomendable
 {
     public Libro ObtenerMejorLibro(List<Libro> libros)
     {
-        if(libros==null || libros.Count==0)
+        if (libros == null || libros.Count == 0)
         {
             throw new ArgumentException("La lista de libros no puede estar vacia");
         }
-        Libro mejorLibro=null;
-        int mayorCantidadVotos=-1;
-        foreach(var libro in libros)
+        Libro mejorLibro = null;
+        int mayorCantidadVotos = -1;
+        foreach (var libro in libros)
         {
-            int cantidadVotos=libro.ObtenerCantidadVotos();
-            if(cantidadVotos>mayorCantidadVotos)
+            int cantidadVotos = libro.ObtenerCantidadVotos();
+            if (cantidadVotos > mayorCantidadVotos)
             {
-                mayorCantidadVotos=cantidadVotos;
-                mejorLibro=libro;
+                mayorCantidadVotos = cantidadVotos;
+                mejorLibro = libro;
             }
         }
         return mejorLibro;
@@ -130,19 +169,19 @@ public class Libreria
     private List<Libro> libros = new List<Libro>();
     private IRecomendable estrategiaRecomendacion = new RecomendacionPorPromedio();
 
-    private readonly string[] generoFiccion = {"Ciencia Ficción", "Fantasia", "Romance", "Misterio","Horror","Novela" };
-    private readonly string[] generoTecnico = {"ED diferenciales", "Termodinamica", "Mecanica de Fluidos", "Negocios","Algebra Lineal","Calculo Vectorial" };
+    private readonly string[] generoFiccion = { "Ciencia Ficción", "Fantasia", "Romance", "Misterio", "Horror", "Novela" };
+    private readonly string[] generoTecnico = { "ED diferenciales", "Termodinamica", "Mecanica de Fluidos", "Negocios", "Algebra Lineal", "Calculo Vectorial" };
 
     //Medotodos de la libreria
-    public void AgregarLibro(string titulo,string autor,string genero)
+    public void AgregarLibro(string titulo, string autor, string genero)
     {
-        if(generoFiccion.Contains(genero))
+        if (generoFiccion.Contains(genero))
         {
-            libros.Add(new LibroFiccion(titulo,autor,genero));
+            libros.Add(new LibroFiccion(titulo, autor, genero));
         }
-        else if(generoTecnico.Contains(genero))
+        else if (generoTecnico.Contains(genero))
         {
-            libros.Add(new LibroTecnico(titulo,autor,genero));
+            libros.Add(new LibroTecnico(titulo, autor, genero));
         }
         else
         {
@@ -150,14 +189,14 @@ public class Libreria
         }
     }
 
-    public void CalificarLibro(string titulo,int nota)
+    public void CalificarLibro(string titulo, int nota)
     {
         Libro LibroEncontrado = null;
-        foreach(var libro in libros)
+        foreach (var libro in libros)
         {
-            if(libro.Titulo == titulo)
+            if (libro.Titulo == titulo)
             {
-                LibroEncontrado=libro;
+                LibroEncontrado = libro;
                 break;
             }
         }
@@ -193,20 +232,41 @@ public class Libreria
         }
     }
     //Criterio de calificacion
-    public void CambiarCriterio(string criterio)    
+    public void CambiarCriterio(string criterio)
     {
-        if(criterio=="Promedio")
+        if (criterio == "Promedio")
         {
-            estrategiaRecomendacion=new RecomendacionPorPromedio();
+            estrategiaRecomendacion = new RecomendacionPorPromedio();
         }
-        else if(criterio=="Votos")
+        else if (criterio == "Votos")
         {
-            estrategiaRecomendacion=new RecomendacionPorVotos();
+            estrategiaRecomendacion = new RecomendacionPorVotos();
         }
         else
         {
             throw new ArgumentException("Criterio no reconocido");
         }
     }
+
     //Mejor libro
+    public void MostrarMejorLibro(string genero)
+    {
+        List<Libro> LibrosGenero = new List<Libro>();
+        foreach (var libro in libros)
+        {
+            if (libro.Genero == genero)
+            {
+                LibrosGenero.Add(libro);
+            }
+        }
+        var mejorLibro = estrategiaRecomendacion.ObtenerMejorLibro(LibrosGenero);
+        if (mejorLibro != null)
+        {
+            Console.WriteLine(mejorLibro.Titulo);
+        }
+        else
+        {
+            Console.WriteLine("No hay libros en este genero");
+        }
+    }
 }
